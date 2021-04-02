@@ -28,6 +28,16 @@ import { ClientListComponent } from './components/ui/uiComponents/clients/client
 import { EditProfileComponent } from './components/ui/uiComponents/modals/edit-profile/edit-profile.component';
 import { LogOutAlertComponent } from './components/ui/uiComponents/modals/log-out-alert/log-out-alert.component';
 import { EditPasswordComponent } from './components/ui/uiComponents/modals/edit-password/edit-password.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -60,7 +70,12 @@ import { EditPasswordComponent } from './components/ui/uiComponents/modals/edit-
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
