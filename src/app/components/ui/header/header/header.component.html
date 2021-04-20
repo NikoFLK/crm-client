@@ -28,8 +28,7 @@
             </button>
 
             <mat-menu #notifMenu="matMenu" xPosition="after">
-                <button mat-menu-item><mat-icon>logout</mat-icon>Log Out</button>
-                <button mat-menu-item><mat-icon>help</mat-icon>Support</button>
+                    <div mat-menu-item *ngFor="let notif of notifs">{{ notif.name }}</div>
             </mat-menu>
         </div>
 

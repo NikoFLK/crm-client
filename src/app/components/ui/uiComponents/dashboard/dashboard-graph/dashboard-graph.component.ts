@@ -14,7 +14,7 @@ export class DashboardGraphComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  lineChartData: ChartDataSets[] = [
+   lineChartData: ChartDataSets[] = [
     { data: [85, 72, 78, 75, 77, 75], label: 'Crude oil prices' },
   ];
 

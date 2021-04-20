@@ -12,4 +12,13 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  notifs = [
+    {
+      name: 'notif1'
+  },
+  {
+      name: 'notif2'
+  }
+  ]
+
 }
