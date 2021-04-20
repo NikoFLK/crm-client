@@ -1,2 +1,36 @@
-    <mat-toolbar>
-    </mat-toolbar>
+<mat-toolbar class="main-header">
+    <div fxLayout="row" fxLayoutAlign="end center"></div>
+        <div fxFlex="78%" class="first-header"></div>
+        
+        <div fxFlex="20%" class="second-header" [matMenuTriggerFor]="mainMenu"> 
+            <div fxLayout="row">
+                <div fxFlex="33%">
+                    <img src="../../../../../assets/paul.jpg" class="profile-avatar">
+                </div>
+
+                <div fxFlex="33%">
+                    <p>Paul TURPIN</p>
+                </div>
+
+                <div fxFlex="33%">
+                    <mat-icon >expand_more</mat-icon>
+                </div>
+                <mat-menu #mainMenu="matMenu" xPosition="after">
+                    <button mat-menu-item><mat-icon>logout</mat-icon>Log Out</button>
+                    <button mat-menu-item><mat-icon>help</mat-icon>Support</button>
+                </mat-menu>
+            </div>
+        </div>
+
+        <div fxFlex="2%" class="third-header" [matMenuTriggerFor]="notifMenu" class="notif-bell">
+            <button mat-icon-button>
+                <mat-icon style="color: white;">notifications</mat-icon>
+            </button>
+
+            <mat-menu #notifMenu="matMenu" xPosition="after">
+                <button mat-menu-item><mat-icon>logout</mat-icon>Log Out</button>
+                <button mat-menu-item><mat-icon>help</mat-icon>Support</button>
+            </mat-menu>
+        </div>
+
+</mat-toolbar>

@@ -30,13 +30,16 @@ import { LogOutAlertComponent } from './components/ui/uiComponents/modals/log-ou
 import { EditPasswordComponent } from './components/ui/uiComponents/modals/edit-password/edit-password.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {MatCardModule} from '@angular/material/card';
-import {MatButtonModule} from '@angular/material/button';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatToolbarModule} from '@angular/material/toolbar';
-
-
-
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatMenuModule } from '@angular/material/menu';
+import { FlexLayoutModule } from "@angular/flex-layout";
+import { ChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -75,7 +78,13 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatCardModule,
     MatButtonModule,
     MatSidenavModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatIconModule,
+    MatListModule,
+    MatGridListModule,
+    MatMenuModule,
+    FlexLayoutModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
