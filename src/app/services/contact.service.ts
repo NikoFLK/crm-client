@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpEvent, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Contact} from '../models/contact';
 import {Observable} from 'rxjs';
 
@@ -16,7 +16,7 @@ export class ContactService {
 
   constructor(private http: HttpClient) { }
 
-  getAllContacts(): Observable<Array<Contact>> {
+  getAllContactsFromCompany(companyId: number): Observable<Array<Contact>> {
     return this.http.get<Array<Contact>>(this.apiUrl + 'get', this.httpOptions);
   }
 
