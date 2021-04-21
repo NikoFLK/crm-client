@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {Company} from '../../../../../models/company';
-import {Contact} from '../../../../../models/contact';
 import {CompanyService} from '../../../../../services/company.service';
 import {ContactService} from '../../../../../services/contact.service';
 
@@ -13,7 +12,7 @@ import {ContactService} from '../../../../../services/contact.service';
 export class ClientListComponent implements OnInit {
   companies: Company[];
   dataSource: MatTableDataSource<Company>;
-  displayedColumns: string[] = ['id', 'name', 'address', 'phoneNumber'];
+  displayedColumns: string[] = ['id', 'name', 'adress', 'phoneNumber'];
 
   constructor(private companyService: CompanyService, private contactService: ContactService) {
     this.companies = [];
@@ -35,6 +34,7 @@ export class ClientListComponent implements OnInit {
     });
   }
 
+  // tslint:disable-next-line:typedef
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();

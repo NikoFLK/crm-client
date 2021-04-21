@@ -1,6 +1,6 @@
 import {Contact} from './contact';
-import {Historic} from "./historic";
-import {Document} from "./Document";
+import {Historic} from './historic';
+import {Document} from './Document';
 
 export class Company {
   // @ts-ignore
@@ -32,7 +32,7 @@ export class Company {
 
   constructor() {
     this.name = '';
-    this.address = '';
+    this.adress = '';
     this.phoneNumber = '';
     this.contacts = [];
   }

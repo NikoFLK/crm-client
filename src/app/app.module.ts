@@ -23,7 +23,6 @@ import { DashboardGraphComponent } from './components/ui/uiComponents/dashboard/
 import { EventCalendarComponent } from './components/ui/uiComponents/events/event-calendar/event-calendar.component';
 import { NewEventComponent } from './components/ui/uiComponents/events/new-event/new-event.component';
 import { EditEventComponent } from './components/ui/uiComponents/events/edit-event/edit-event.component';
-import { EditClientComponent } from './components/ui/uiComponents/clients/edit-client/edit-client.component';
 import { NewClientComponent } from './components/ui/uiComponents/clients/new-client/new-client.component';
 import { ClientListComponent } from './components/ui/uiComponents/clients/client-list/client-list.component';
 import { EditProfileComponent } from './components/ui/uiComponents/modals/edit-profile/edit-profile.component';
@@ -47,9 +46,8 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import { ContactFromClientListComponent } from './components/ui/uiComponents/contact-from-client/contact-from-client-list/contact-from-client-list.component';
 import { ContactFromClientCreateComponent } from './components/ui/uiComponents/contact-from-client/contact-from-client-create/contact-from-client-create.component';
-import { ContactFromClientUpdateComponent } from './components/ui/uiComponents/contact-from-client/contact-from-client-update/contact-from-client-update.component';
 import { CompanyComponent } from './components/pages/company/company.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -74,7 +72,6 @@ import {FormsModule} from "@angular/forms";
     EventCalendarComponent,
     NewEventComponent,
     EditEventComponent,
-    EditClientComponent,
     NewClientComponent,
     ClientListComponent,
     EditProfileComponent,
@@ -82,7 +79,6 @@ import {FormsModule} from "@angular/forms";
     EditPasswordComponent,
     ContactFromClientListComponent,
     ContactFromClientCreateComponent,
-    ContactFromClientUpdateComponent,
     CompanyComponent
   ],
   imports: [

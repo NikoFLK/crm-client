@@ -17,16 +17,15 @@ export class CompanyService {
   constructor(private http: HttpClient) { }
 
   getAllCompanies(): Observable<Array<Company>> {
-    return this.http.post<Array<Company>>(this.apiUrl + 'get',{}, this.httpOptions);
+    return this.http.post<Array<Company>>(this.apiUrl + 'get', {}, this.httpOptions);
   }
 
-
   getCompany(filter: object): Observable<Company> {
-    return this.http.post<Company>(this.apiUrl + 'get',filter, this.httpOptions);
+    return this.http.post<Company>(this.apiUrl + 'get', filter, this.httpOptions);
   }
 
   getCompanyById(id: number): Observable<Company> {
-    return this.http.post<Company>(this.apiUrl + 'get', {id:id}, this.httpOptions);
+    return this.http.post<Company>(this.apiUrl + 'get', {id}, this.httpOptions);
   }
 
   addCompany(company: Company): void {
