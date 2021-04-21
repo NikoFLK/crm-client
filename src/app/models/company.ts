@@ -5,13 +5,13 @@ export class Company {
   id: number;
   name: string;
   address: string;
-  phone_number: string;
+  phoneNumber: string;
   contacts: Contact[];
 
   constructor() {
     this.name = '';
     this.address = '';
-    this.phone_number = '';
+    this.phoneNumber = '';
     this.contacts = [];
   }
 }

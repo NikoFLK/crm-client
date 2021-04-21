@@ -20,6 +20,7 @@ export class CompanyService {
     return this.http.get<Array<Company>>(this.apiUrl + 'get', this.httpOptions);
   }
 
+
   getCompany(id: number): Observable<Company> {
     return this.http.get<Company>(this.apiUrl + 'get' + id, this.httpOptions);
   }

@@ -13,7 +13,7 @@ import {ContactService} from '../../../../../services/contact.service';
 export class ClientListComponent implements OnInit {
   companies: Company[];
   dataSource: MatTableDataSource<Company>;
-  displayedColumns: string[] = ['id', 'name', 'address', 'phone_number'];
+  displayedColumns: string[] = ['id', 'name', 'address', 'phoneNumber'];
 
   constructor(private companyService: CompanyService, private contactService: ContactService) {
     this.companies = [];
@@ -22,7 +22,6 @@ export class ClientListComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     this.companies = await this.getCompanies();
-    console.log('balek');
     this.dataSource = new MatTableDataSource<Company>(this.companies);
   }
 

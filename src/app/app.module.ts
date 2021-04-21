@@ -45,6 +45,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
+import { ContactFromClientListComponent } from './components/ui/uiComponents/contact-from-client/contact-from-client-list/contact-from-client-list.component';
+import { ContactFromClientCreateComponent } from './components/ui/uiComponents/contact-from-client/contact-from-client-create/contact-from-client-create.component';
+import { ContactFromClientUpdateComponent } from './components/ui/uiComponents/contact-from-client/contact-from-client-update/contact-from-client-update.component';
 
 
 @NgModule({
@@ -74,7 +77,10 @@ import {MatSortModule} from '@angular/material/sort';
     ClientListComponent,
     EditProfileComponent,
     LogOutAlertComponent,
-    EditPasswordComponent
+    EditPasswordComponent,
+    ContactFromClientListComponent,
+    ContactFromClientCreateComponent,
+    ContactFromClientUpdateComponent
   ],
   imports: [
     HttpClientModule,
