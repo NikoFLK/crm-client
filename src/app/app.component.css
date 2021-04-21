@@ -1,0 +1,12 @@
+.example-container {
+    height: 100%;
+    overflow: hidden;
+    background-color: #424549!important	;
+  }
+.body::-webkit-scrollbar {
+  display: none;
+  }
+
+.sidebar{
+    width:15%;
+}
