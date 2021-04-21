@@ -40,6 +40,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { ChartsModule } from 'ng2-charts';
+import {MatInputModule} from '@angular/material/input';
 
 
 @NgModule({
@@ -84,7 +85,8 @@ import { ChartsModule } from 'ng2-charts';
     MatGridListModule,
     MatMenuModule,
     FlexLayoutModule,
-    ChartsModule
+    ChartsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

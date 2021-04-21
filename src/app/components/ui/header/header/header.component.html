@@ -3,18 +3,15 @@
         <div fxFlex="78%" class="first-header"></div>
         
         <div fxFlex="20%" class="second-header" [matMenuTriggerFor]="mainMenu"> 
-            <div fxLayout="row">
+            <div fxLayout="row" fxLayoutGap="1%">
                 <div fxFlex="33%">
                     <img src="../../../../../assets/paul.jpg" class="profile-avatar">
                 </div>
 
-                <div fxFlex="33%">
-                    <p>Paul TURPIN</p>
+                <div class="profile-name" fxFlex="33%">
+                    <p >Paul TURPIN</p>
                 </div>
 
-                <div fxFlex="33%">
-                    <mat-icon >expand_more</mat-icon>
-                </div>
                 <mat-menu #mainMenu="matMenu" xPosition="after">
                     <button mat-menu-item><mat-icon>logout</mat-icon>Log Out</button>
                     <button mat-menu-item><mat-icon>help</mat-icon>Support</button>

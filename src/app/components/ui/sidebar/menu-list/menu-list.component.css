@@ -3,11 +3,11 @@ ul {
 }
 
 mat-list-item{
-    margin:5% auto;
+    margin:1vh auto;
 }
 
 .menu-buttons{
-    width:80%;
+    width:10vw;
     background-color: #7289da;
     color:white;
     text-align: left;
