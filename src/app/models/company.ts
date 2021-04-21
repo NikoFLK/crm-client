@@ -33,7 +33,7 @@ export class Company {
   constructor() {
     this.name = '';
     this.address = '';
-    this.phone_number = '';
+    this.phoneNumber = '';
     this.contacts = [];
   }
 }

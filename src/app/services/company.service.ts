@@ -20,6 +20,7 @@ export class CompanyService {
     return this.http.post<Array<Company>>(this.apiUrl + 'get',{}, this.httpOptions);
   }
 
+
   getCompany(filter: object): Observable<Company> {
     return this.http.post<Company>(this.apiUrl + 'get',filter, this.httpOptions);
   }
