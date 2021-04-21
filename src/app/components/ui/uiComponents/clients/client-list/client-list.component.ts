@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {Company} from '../../../../../models/company';
 import {CompanyService} from '../../../../../services/company.service';
-import {ContactService} from '../../../../../services/contact.service';
 
 @Component({
   selector: 'app-client-list',
@@ -12,9 +11,9 @@ import {ContactService} from '../../../../../services/contact.service';
 export class ClientListComponent implements OnInit {
   companies: Company[];
   dataSource: MatTableDataSource<Company>;
-  displayedColumns: string[] = ['id', 'name', 'adress', 'phoneNumber'];
+  displayedColumns: string[] = ['id', 'name', 'adress', 'phoneNumber', 'email'];
 
-  constructor(private companyService: CompanyService, private contactService: ContactService) {
+  constructor(private companyService: CompanyService) {
     this.companies = [];
     this.dataSource = new MatTableDataSource<Company>();
   }
