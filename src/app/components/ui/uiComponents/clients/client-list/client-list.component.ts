@@ -18,12 +18,22 @@ export class ClientListComponent implements OnInit {
   constructor(private companyService: CompanyService, private contactService: ContactService) {
     this.companies = [];
     this.dataSource = new MatTableDataSource<Company>();
-    companyService.getAllCompanies().subscribe(companies => {
-      this.dataSource = new MatTableDataSource<Company>(companies);
-    });
   }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    this.companies = await this.getCompanies();
+    console.log('balek');
+    this.dataSource = new MatTableDataSource<Company>(this.companies);
+  }
+
+  getCompanies(): Promise<Company[]> {
+    return new Promise((resolve, reject) => {
+      this.companyService.getAllCompanies().subscribe(companies => {
+        resolve(companies);
+      }, error => {
+        reject(error.message);
+      });
+    });
   }
 
   applyFilter(event: Event) {

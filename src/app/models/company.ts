@@ -31,6 +31,9 @@ export class Company {
   createdAt: Date;
 
   constructor() {
+    this.name = '';
+    this.address = '';
+    this.phone_number = '';
     this.contacts = [];
   }
 }
