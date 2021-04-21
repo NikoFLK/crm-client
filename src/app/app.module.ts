@@ -48,6 +48,8 @@ import {MatSortModule} from '@angular/material/sort';
 import { ContactFromClientListComponent } from './components/ui/uiComponents/contact-from-client/contact-from-client-list/contact-from-client-list.component';
 import { ContactFromClientCreateComponent } from './components/ui/uiComponents/contact-from-client/contact-from-client-create/contact-from-client-create.component';
 import { ContactFromClientUpdateComponent } from './components/ui/uiComponents/contact-from-client/contact-from-client-update/contact-from-client-update.component';
+import { CompanyComponent } from './components/pages/company/company.component';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -80,7 +82,8 @@ import { ContactFromClientUpdateComponent } from './components/ui/uiComponents/c
     EditPasswordComponent,
     ContactFromClientListComponent,
     ContactFromClientCreateComponent,
-    ContactFromClientUpdateComponent
+    ContactFromClientUpdateComponent,
+    CompanyComponent
   ],
   imports: [
     HttpClientModule,
@@ -100,7 +103,8 @@ import { ContactFromClientUpdateComponent } from './components/ui/uiComponents/c
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
-    MatSortModule
+    MatSortModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
