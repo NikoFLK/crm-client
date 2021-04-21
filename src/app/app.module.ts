@@ -45,6 +45,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
+import { CompanyComponent } from './components/pages/company/company.component';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -74,7 +76,8 @@ import {MatSortModule} from '@angular/material/sort';
     ClientListComponent,
     EditProfileComponent,
     LogOutAlertComponent,
-    EditPasswordComponent
+    EditPasswordComponent,
+    CompanyComponent
   ],
   imports: [
     HttpClientModule,
@@ -94,7 +97,8 @@ import {MatSortModule} from '@angular/material/sort';
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
-    MatSortModule
+    MatSortModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
