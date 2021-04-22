@@ -1,8 +1,8 @@
 <mat-toolbar class="main-header">
     <div fxLayout="row" fxLayoutAlign="end center"></div>
         <div fxFlex="78%" class="first-header"></div>
-        
-        <div fxFlex="20%" class="second-header" [matMenuTriggerFor]="mainMenu"> 
+
+        <div fxFlex="20%" class="second-header" [matMenuTriggerFor]="mainMenu">
             <div fxLayout="row" fxLayoutGap="1%">
                 <div fxFlex="33%">
                     <img src="../../../../../assets/paul.jpg" class="profile-avatar">
@@ -19,14 +19,15 @@
             </div>
         </div>
 
-        <div fxFlex="2%" class="third-header" [matMenuTriggerFor]="notifMenu" class="notif-bell">
+<!--        <div fxFlex="2%" class="third-header" [matMenuTriggerFor]="notifMenu" class="notif-bell"> -->
+          <div fxFlex="2%" class="third-header" class="notif-bell">
             <button mat-icon-button>
-                <mat-icon style="color: white;">notifications</mat-icon>
+                <mat-icon style="color: white;">logout</mat-icon>
             </button>
 
-            <mat-menu #notifMenu="matMenu" xPosition="after">
-                    <div mat-menu-item *ngFor="let notif of notifs">{{ notif.name }}</div>
-            </mat-menu>
+<!--            <mat-menu #notifMenu="matMenu" xPosition="after">-->
+<!--                    <div mat-menu-item *ngFor="let notif of notifs">{{ notif.name }}</div>-->
+<!--            </mat-menu>-->
         </div>
 
 </mat-toolbar>

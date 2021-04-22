@@ -1,0 +1,11 @@
+.container {
+  margin: 2%;
+}
+
+mat-form-field {
+  width: 95%;
+}
+
+.buttonSend {
+  width: 98%;
+}

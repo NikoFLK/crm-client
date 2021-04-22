@@ -43,7 +43,7 @@ export class ContactFromClientListComponent implements OnInit {
   contactModificationDialog(id: number | undefined): void {
     const dialogRef = this.dialog.open(ContactFromClientCreateComponent, {
       width: '60%',
-      height: '50%',
+      height: '53%',
       data: {
         idContact: id,
         contactCompanyId: this.idContactsCompany

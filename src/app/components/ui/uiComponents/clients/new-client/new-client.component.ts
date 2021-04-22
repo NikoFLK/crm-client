@@ -36,10 +36,10 @@ export class NewClientComponent implements OnInit {
   onSubmit(): void {
     if (this.add){
       this.companyService.addCompany(this.newCompany);
-      this.router.navigate(['/company']);
+      this.router.navigate(['/clients']);
     }else {
       this.companyService.updateCompany(this.newCompany);
-      this.router.navigate(['/company']);
+      this.router.navigate(['/clients']);
     }
   }
 }
