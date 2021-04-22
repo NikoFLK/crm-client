@@ -21,16 +21,17 @@ export class MailComponent implements OnInit {
 
   ngOnInit(): void {
     this.isLoadingResults = false
-    console.log(this.data.dataKey)
    }
 
-  selectFile(event: number) {
-    if (event > 0) {
-      this.mailPdf = event;
-    }
+  selectFile(event: any) {
+    console.log(event.files[0]);
+    this.mailPdf = event.files[0];
+
   }
 
   onFormSubmit() {
+    console.log(this.mailPdf);
+    console.log(this.data.dataKey);
     this.mailService.sendEmail(this.data.dataKey, this.mailPdf);
     this.dialogRef.close();
 
