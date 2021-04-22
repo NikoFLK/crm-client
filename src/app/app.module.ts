@@ -51,7 +51,14 @@ import { ContactFromClientCreateComponent } from './components/ui/uiComponents/c
 import { CompanyComponent } from './components/pages/company/company.component';
 import {FormsModule} from '@angular/forms';
 import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
+import {FullCalendarModule} from '@fullcalendar/angular';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import interactionPlugin from '@fullcalendar/interaction';
 
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+  interactionPlugin
+]);
 
 @NgModule({
   declarations: [
@@ -107,6 +114,7 @@ import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
     ReactiveFormsModule,
     FormsModule,
     MatDialogModule,
+    FullCalendarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
