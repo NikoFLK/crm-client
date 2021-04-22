@@ -14,27 +14,22 @@ export class MailComponent implements OnInit {
   private mailForm: FormGroup | any;
   public isLoadingResults: any;
 
-  constructor(  @Inject(MAT_DIALOG_DATA) public data: any, private formBuilder: FormBuilder, private mailService: MailService,  public dialogRef: MatDialogRef<MailComponent>
-  ) {
-
-  }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private formBuilder: FormBuilder,
+              private mailService: MailService,  public dialogRef: MatDialogRef<MailComponent>) { }
 
   ngOnInit(): void {
-    this.isLoadingResults = false
-    console.log(this.data.dataKey)
+    this.isLoadingResults = false;
+    console.log(this.data.dataKey);
    }
 
-  selectFile(event: number) {
+  selectFile(event: number): void {
     if (event > 0) {
       this.mailPdf = event;
     }
   }
 
-  onFormSubmit() {
+  onFormSubmit(): void {
     this.mailService.sendEmail(this.data.dataKey, this.mailPdf);
     this.dialogRef.close();
-
   }
-
-
 }
