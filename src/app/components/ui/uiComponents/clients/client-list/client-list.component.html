@@ -1,71 +1,77 @@
-<button class="mat-raised-button" routerLink="client-modification"><mat-icon>add</mat-icon></button><br>
+<div class="content">
+  <button class="mat-raised-button" routerLink="../client-modification">
+    <mat-icon color="accent">add</mat-icon>
+  </button>
+  <br>
 
-<mat-form-field>
-  <mat-label>Filter</mat-label>
-  <input matInput (keyup)="applyFilter($event)" placeholder="" #input>
-</mat-form-field>
+  <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="" #input>
+  </mat-form-field>
 
-<div class="mat-elevation-z8">
-  <table style="width: 100%;" mat-table [dataSource]="dataSource" matSort>
+  <div class="mat-elevation-z8">
+    <table style="width: 100%;" mat-table [dataSource]="dataSource" matSort>
 
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> ID</th>
-      <td mat-cell *matCellDef="let row"> {{row.id}} </td>
-    </ng-container>
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID</th>
+        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+      </ng-container>
 
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nom de l'entreprise</th>
-      <td mat-cell *matCellDef="let row"> {{row.name}} </td>
-    </ng-container>
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nom de l'entreprise</th>
+        <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+      </ng-container>
 
-    <ng-container matColumnDef="email">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Email principal</th>
-      <td mat-cell *matCellDef="let row"> {{row.email}} </td>
-    </ng-container>
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Email principal</th>
+        <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+      </ng-container>
 
-    <ng-container matColumnDef="actions">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
-      <td mat-cell *matCellDef="let row">
-        <button (click)="contactsListDialog(row.id, row.name)" class="mat-raised-button">
-          <mat-icon>send</mat-icon>
-        </button>
-        <button (click)="sendMailDialog(row.email)" class="mat-raised-button">
-          <mat-icon>list</mat-icon>
-        </button>
-        <button routerLink="client-modification/{{row.id}}" class="mat-raised-button">
-          <mat-icon>list</mat-icon>
-        </button>
-        <button (click)="clientDeletion(row.id)" class="mat-raised-button">
-          <mat-icon>list</mat-icon>
-        </button>
-      </td>
-    </ng-container>
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions</th>
+        <td mat-cell *matCellDef="let row">
+          <button (click)="contactsListDialog(row.id, row.name)" class="mat-raised-button">
+            <mat-icon color="primary">add</mat-icon>
+          </button>
+          <button (click)="sendMailDialog(row.email)" class="mat-raised-button">
+            <mat-icon>send</mat-icon>
+          </button>
+          <button routerLink="../client-modification/{{row.id}}" class="mat-raised-button">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button (click)="clientDeletion(row.id)" class="mat-raised-button">
+            <mat-icon color="warn">delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
 
-    <ng-container matColumnDef="sendEmail">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Envoyer fichier</th>
-      <td mat-cell *matCellDef="let row">
-        <button (click)="sendMailDialog(row.email)" class="mat-raised-button">
-          <mat-icon>list</mat-icon>
-        </button>
-      </td>
-    </ng-container>
+      <ng-container matColumnDef="sendEmail">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Envoyer fichier</th>
+        <td mat-cell *matCellDef="let row">
+          <button (click)="sendMailDialog(row.email)" class="mat-raised-button">
+            <mat-icon>list</mat-icon>
+          </button>
+        </td>
+      </ng-container>
 
-    <ng-container matColumnDef="phoneNumber">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Tél. principal</th>
-      <td mat-cell *matCellDef="let row"> {{row.phoneNumber}} </td>
-    </ng-container>
+      <ng-container matColumnDef="phoneNumber">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Tél. principal</th>
+        <td mat-cell *matCellDef="let row"> {{row.phoneNumber}} </td>
+      </ng-container>
 
-    <ng-container matColumnDef="adress">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Adresse</th>
-      <td mat-cell *matCellDef="let row"> {{row.adress}} </td>
-    </ng-container>
+      <ng-container matColumnDef="adress">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Adresse</th>
+        <td mat-cell *matCellDef="let row"> {{row.adress}} </td>
+      </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
-    <tr class="mat-row" *matNoDataRow>
-      <td class="mat-cell" colspan="4">Aucun élément trouvé.</td>
-    </tr>
-  </table>
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">Aucun élément trouvé.</td>
+      </tr>
+    </table>
+
+  </div>
 
 </div>
