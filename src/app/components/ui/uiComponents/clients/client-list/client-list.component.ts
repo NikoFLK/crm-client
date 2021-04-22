@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {Company} from '../../../../../models/company';
 import {CompanyService} from '../../../../../services/company.service';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogConfig} from '@angular/material/dialog';
+import {MailComponent} from '../../../../pages/mail/mail.component';
 
 @Component({
   selector: 'app-client-list',
@@ -11,9 +13,9 @@ import {CompanyService} from '../../../../../services/company.service';
 export class ClientListComponent implements OnInit {
   companies: Company[];
   dataSource: MatTableDataSource<Company>;
-  displayedColumns: string[] = ['id', 'name', 'adress', 'phoneNumber', 'email'];
+  displayedColumns: string[] = ['id', 'name', 'adress', 'phoneNumber', 'email', 'sendEmail'];
 
-  constructor(private companyService: CompanyService) {
+  constructor(private companyService: CompanyService, public dialog: MatDialog) {
     this.companies = [];
     this.dataSource = new MatTableDataSource<Company>();
   }
@@ -38,4 +40,22 @@ export class ClientListComponent implements OnInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+
+  sendMailDialog(email: any) {
+    const dialogRef = this.dialog.open(MailComponent, {
+      width: '330px',
+      height: '400px',
+      data: {
+        dataKey: email
+      }
+    },);
+
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
+
+
 }
