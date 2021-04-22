@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ContactService} from '../../../../../services/contact.service';
 import {Contact} from '../../../../../models/contact';
+import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-contact-from-client-create',
@@ -14,16 +15,16 @@ export class ContactFromClientCreateComponent implements OnInit {
   id: number | undefined;
   add: boolean;
 
-  constructor(private router: Router, private route: ActivatedRoute, private contactService: ContactService) {
-    this.contactCompanyId = 1; // TODO, retrouver le paramètre depuis la data passée par le modal
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private router: Router, private route: ActivatedRoute,
+              private contactService: ContactService) {
+    this.contactCompanyId = this.data.contactCompanyId;
+    this.id = this.data.idContact;
     this.newContact = new Contact();
+    this.newContact.companyId = this.contactCompanyId;
     this.add = true;
   }
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
-      this.id = params.id;
-    });
     if (this.id === undefined) {
       this.add = true;
     } else {
@@ -32,13 +33,13 @@ export class ContactFromClientCreateComponent implements OnInit {
       // @ts-ignore
       this.contactService.getContactById(id).subscribe((a: Contact[]) => {
         this.newContact = a[0];
-        console.log(a[0]);
       });
     }
   }
 
   onSubmit(): void {
     if (this.add){
+      console.log(this.newContact);
       this.contactService.addContact(this.newContact);
       this.router.navigate(['/contact']);
     }else {

@@ -8,7 +8,7 @@ import {Company} from '../models/company';
   providedIn: 'root'
 })
 export class ContactService {
-  apiUrl = 'contact/';
+  apiUrl = 'http://localhost:8000/contact/';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type' : 'application/json'
@@ -26,28 +26,28 @@ export class ContactService {
   }
 
   getContactById(id: number): Observable<Contact> {
-    return this.http.post<Contact>(this.apiUrl + 'get', {id}, this.httpOptions);
+    return this.http.post<Contact>(this.apiUrl + 'get', {id:id}, this.httpOptions);
   }
 
   addContact(contact: Contact): void {
-    this.http.post(this.apiUrl + 'new', {
-      company_id: contact.companyId,
+    this.http.post(this.apiUrl + contact.companyId +'/new', {
       name: contact.name,
-      last_name: contact.lastName,
+      lastname: contact.lastname,
       phone_number: contact.phoneNumber,
       email: contact.email,
-      job: contact.job
+      job: contact.job,
+      notes: "oui"
     }, this.httpOptions).subscribe(res => console.log(res));
   }
 
   updateContact(contact: Contact): void {
     this.http.put(this.apiUrl + contact.id + '/edit', {
-      company_id: contact.companyId,
       name: contact.name,
-      last_name: contact.lastName,
+      lastname: contact.lastname,
       phone_number: contact.phoneNumber,
       email: contact.email,
-      job: contact.job
+      job: contact.job,
+      notes: "oui"
     }, this.httpOptions)
       .subscribe(res => console.log(res));
   }
