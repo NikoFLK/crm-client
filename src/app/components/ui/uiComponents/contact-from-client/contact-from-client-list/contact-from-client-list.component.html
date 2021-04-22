@@ -40,10 +40,10 @@
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
       <td mat-cell *matCellDef="let row">
         <button (click)="contactModificationDialog(row.id)" class="mat-raised-button">
-          <mat-icon>list</mat-icon>
+          <mat-icon>edit</mat-icon>
         </button>
         <button (click)="contactDeletion(row.id)" class="mat-raised-button">
-          <mat-icon>list</mat-icon>
+          <mat-icon color="warn">delete</mat-icon>
         </button>
       </td>
 

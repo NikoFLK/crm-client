@@ -69,5 +69,8 @@ export class ClientListComponent implements OnInit {
         nameContactsCompany: nameCompany
       }
     });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 }
