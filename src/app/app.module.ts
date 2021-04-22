@@ -50,6 +50,7 @@ import { ContactFromClientListComponent } from './components/ui/uiComponents/con
 import { ContactFromClientCreateComponent } from './components/ui/uiComponents/contact-from-client/contact-from-client-create/contact-from-client-create.component';
 import { CompanyComponent } from './components/pages/company/company.component';
 import {FormsModule} from '@angular/forms';
+import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 
 
 @NgModule({
@@ -105,6 +106,7 @@ import {FormsModule} from '@angular/forms';
     MatSortModule,
     ReactiveFormsModule,
     FormsModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
