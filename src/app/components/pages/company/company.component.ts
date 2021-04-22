@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import {Company} from '../../../../../models/company';
-import {ActivatedRoute, Router} from '@angular/router';
-import {CompanyService} from '../../../../../services/company.service';
+import {Company} from "../../../models/company";
+import {ActivatedRoute, Router} from "@angular/router";
+import {CompanyService} from "../../../services/company.service";
+
 
 @Component({
-  selector: 'app-new-client',
-  templateUrl: './new-client.component.html',
-  styleUrls: ['./new-client.component.css']
+  selector: 'app-company',
+  templateUrl: './company.component.html',
+  styleUrls: ['./company.component.css']
 })
-export class NewClientComponent implements OnInit {
+export class CompanyComponent implements OnInit {
+
   newCompany: Company;
   id: number | undefined;
   add: boolean;
@@ -21,12 +23,12 @@ export class NewClientComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       this.id = params.id;
-    });
-    if (this.id === undefined) {
+    })
+    if (this.id === undefined){
       this.add = true;
-    } else {
+    }else{
       this.add = false;
-      const id = this.id;
+      let id = this.id;
       // @ts-ignore
       this.companyService.getCompanyById(id).subscribe((a: Company[]) => {
         this.newCompany = a[0];
@@ -35,7 +37,7 @@ export class NewClientComponent implements OnInit {
     }
   }
 
-  onSubmit(): void {
+  onSubmit():void {
     if (this.add){
       this.companyService.addCompany(this.newCompany);
       this.router.navigate(['/company']);
