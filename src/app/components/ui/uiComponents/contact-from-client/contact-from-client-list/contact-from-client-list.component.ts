@@ -15,13 +15,14 @@ export class ContactFromClientListComponent implements OnInit {
   nameContactsCompany: string;
   contacts: Contact[];
   dataSource: MatTableDataSource<Contact>;
-  displayedColumns: string[] = ['id', 'name', 'lastName', 'email', 'phoneNumber', 'job', 'actions'];
+  displayedColumns: string[] = ['id', 'name', 'email', 'phoneNumber', 'job', 'actions'];
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, private contactService: ContactService, private dialog: MatDialog) {
     this.idContactsCompany = this.data.idContactsCompany;
     this.nameContactsCompany = this.data.nameContactsCompany;
     this.contacts = [];
     this.dataSource = new MatTableDataSource<Contact>();
+    console.log(this.data);
   }
 
   async ngOnInit(): Promise<void> {

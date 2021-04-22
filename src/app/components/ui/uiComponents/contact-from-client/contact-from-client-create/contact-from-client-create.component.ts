@@ -20,6 +20,7 @@ export class ContactFromClientCreateComponent implements OnInit {
     this.contactCompanyId = this.data.contactCompanyId;
     this.id = this.data.idContact;
     this.newContact = new Contact();
+    this.newContact.companyId = this.contactCompanyId;
     this.add = true;
   }
 
@@ -32,13 +33,13 @@ export class ContactFromClientCreateComponent implements OnInit {
       // @ts-ignore
       this.contactService.getContactById(id).subscribe((a: Contact[]) => {
         this.newContact = a[0];
-        console.log(a[0]);
       });
     }
   }
 
   onSubmit(): void {
     if (this.add){
+      console.log(this.newContact);
       this.contactService.addContact(this.newContact);
       this.router.navigate(['/contact']);
     }else {

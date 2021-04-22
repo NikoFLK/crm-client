@@ -19,8 +19,7 @@ export class MailService {
     emailFormData.append('body', emailBody);
     if (attachment)
       emailFormData.append('attachment', attachment);
-
-  this.http.post(this.apiUrl, emailFormData, this.httpOptions).subscribe(res => {
+  this.http.post(this.apiUrl+"send", emailFormData, this.httpOptions).subscribe(res => {
     console.log(res);
   });
   }
