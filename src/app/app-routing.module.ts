@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'events', component: EventsComponent },
   { path: 'clients', component: ClientListComponent },
+  { path: 'client-modification/:id', component: NewClientComponent },
   { path: 'client-modification', component: NewClientComponent },
   { path: 'docs', component: DocumentsComponent },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
