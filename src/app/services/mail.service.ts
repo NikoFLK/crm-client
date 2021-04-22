@@ -8,7 +8,8 @@ export class MailService {
   apiUrl = 'http://localhost:8000/mail/';
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type' : 'multipart/form-data'
+      'Content-Type' : 'application/json',
+      'Accept': 'application/json'
     })
   };
 
@@ -16,10 +17,11 @@ export class MailService {
 
   sendEmail(emailBody: string, attachment: Blob): void {
     const emailFormData = new FormData();
-    emailFormData.append('body', emailBody);
+    emailFormData.append('email', emailBody);
     if (attachment)
       emailFormData.append('attachment', attachment);
-  this.http.post(this.apiUrl+"send", emailFormData, this.httpOptions).subscribe(res => {
+  console.dir(emailFormData);
+  this.http.post(this.apiUrl + 'send', emailFormData, this.httpOptions).subscribe(res => {
     console.log(res);
   });
   }

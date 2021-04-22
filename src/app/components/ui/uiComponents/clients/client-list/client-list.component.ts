@@ -48,8 +48,8 @@ export class ClientListComponent implements OnInit {
 
   sendMailDialog(email: any): void {
     const dialogRef = this.dialog.open(MailComponent, {
-      width: '330px',
-      height: '400px',
+      width: '300px',
+      height: '150px',
       data: {
         dataKey: email
       }

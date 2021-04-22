@@ -18,17 +18,18 @@ export class MailComponent implements OnInit {
               private mailService: MailService,  public dialogRef: MatDialogRef<MailComponent>) { }
 
   ngOnInit(): void {
-    this.isLoadingResults = false;
-    console.log(this.data.dataKey);
+    this.isLoadingResults = false
    }
 
-  selectFile(event: number): void {
-    if (event > 0) {
-      this.mailPdf = event;
-    }
+  selectFile(event: any) {
+    console.log(event.files[0]);
+    this.mailPdf = event.files[0];
+
   }
 
-  onFormSubmit(): void {
+  onFormSubmit() {
+    console.log(this.mailPdf);
+    console.log(this.data.dataKey);
     this.mailService.sendEmail(this.data.dataKey, this.mailPdf);
     this.dialogRef.close();
   }
