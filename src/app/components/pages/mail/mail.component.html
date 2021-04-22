@@ -1,0 +1,11 @@
+<label for="email">Email</label>
+<input type="text" id="email" matInput placeholder="mail@mail.com">
+
+<label for="fileUpload" class="file-upload btn btn-primary btn-block rounded-pill shadow"> </label>
+
+<input type="file" id="fileUpload" name="articleImage" onchange="console.log(event.target.files[0])">
+<div class="button-row">
+  <button type="submit" mat-flat-button color="primary">
+    <mat-icon>save</mat-icon>
+  </button>
+</div>

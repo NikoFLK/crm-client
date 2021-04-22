@@ -44,6 +44,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
+import { MailComponent } from './components/pages/mail/mail.component';
+import {ReactiveFormsModule} from '@angular/forms';
 import { ContactFromClientListComponent } from './components/ui/uiComponents/contact-from-client/contact-from-client-list/contact-from-client-list.component';
 import { ContactFromClientCreateComponent } from './components/ui/uiComponents/contact-from-client/contact-from-client-create/contact-from-client-create.component';
 import { CompanyComponent } from './components/pages/company/company.component';
@@ -77,6 +79,7 @@ import {FormsModule} from '@angular/forms';
     EditProfileComponent,
     LogOutAlertComponent,
     EditPasswordComponent,
+    MailComponent,
     ContactFromClientListComponent,
     ContactFromClientCreateComponent,
     CompanyComponent
@@ -100,7 +103,8 @@ import {FormsModule} from '@angular/forms';
     MatInputModule,
     MatTableModule,
     MatSortModule,
-    FormsModule
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

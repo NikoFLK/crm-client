@@ -7,6 +7,7 @@ import { DocumentsComponent } from './components/pages/documents/documents.compo
 import { EventsComponent } from './components/pages/events/events.component';
 import {CompanyComponent} from "./components/pages/company/company.component";
 import {ClientListComponent} from "./components/ui/uiComponents/clients/client-list/client-list.component";
+import {MailComponent} from './components/pages/mail/mail.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'company', component: CompanyComponent },
   { path: 'docs', component: DocumentsComponent },
   { path: 'coming', component: ComingSoonComponent },
+  {path: 'mail', component: MailComponent},
   {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
 ];
 
@@ -24,4 +26,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {
- }
+}
