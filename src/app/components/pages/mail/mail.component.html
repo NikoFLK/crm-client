@@ -1,0 +1,7 @@
+<label for="fileUpload" class="file-upload btn btn-primary btn-block rounded-pill shadow"> </label>
+<input type="file" id="fileUpload" name="articleImage" accept=".pdf" (change)="selectFile($event.target)">
+<div class="button-row">
+  <button (click)="onFormSubmit()" type="submit" mat-flat-button color="primary">
+    Envoyer
+  </button>
+</div>

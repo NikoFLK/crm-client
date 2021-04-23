@@ -1,0 +1,37 @@
+<div class="container">
+  <form class="clients-form" (ngSubmit)="onSubmit()">
+    <mat-form-field class="full-width">
+      <mat-label>Name</mat-label>
+      <input type="text" [(ngModel)]="newCompany.name" [ngModelOptions]="{standalone: true}" matInput placeholder="John Doe">
+    </mat-form-field><br>
+
+    <mat-form-field class="full-width">
+      <mat-label>Email</mat-label>
+      <input type="email" [(ngModel)]="newCompany.email" [ngModelOptions]="{standalone: true}" matInput placeholder="JohnDoe@email.ex">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Phone</mat-label>
+      <input type="number" [(ngModel)]="newCompany.phoneNumber" [ngModelOptions]="{standalone: true}" matInput placeholder="0601010101">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Facturation address</mat-label>
+      <input type="text" [(ngModel)]="newCompany.facturationAdress" [ngModelOptions]="{standalone: true}" matInput placeholder="22 rue du grand pont">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Address</mat-label>
+      <input type="text" [(ngModel)]="newCompany.adress" [ngModelOptions]="{standalone: true}" matInput placeholder="22 rue du grand pont">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Notes</mat-label>
+      <textarea [(ngModel)]="newCompany.notes" [ngModelOptions]="{standalone: true}" type="text" matInput >
+      </textarea>
+    </mat-form-field>
+
+    <input type="submit" class="mat-button ">
+
+  </form>
+</div>

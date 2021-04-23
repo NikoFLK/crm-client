@@ -1,0 +1,25 @@
+.main-header{
+    background-color: #36393e;
+}
+
+.second-header{
+    height:100%;
+    background-color: #1e2124;
+    color:white;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.profile-avatar{
+    height:5vh;
+    border-radius: 50%;
+    width:5vh;
+    margin:10%; 
+}
+.profile-name{
+    padding:1vh;
+}
+
+.notif-bell{
+    margin:0 auto;
+}
